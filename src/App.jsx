@@ -31,8 +31,22 @@ function App() {
 
   return (
     <>
-      <Formulario/>
-      <Listado cita={cita}/>
+
+
+      <h1>ADMINISTRADOR DE PACIENTES</h1>
+      <div class="container">
+        <div class="row">
+          <div class="one-half column">
+            <h2>Crear mi Cita</h2>
+            <Formulario/>
+          </div>
+          <div class="one-half column">
+            <h2>Listado de Citas</h2>
+            <Listado cita={cita}/>
+          </div>
+        </div>
+      </div>
+   
     </>
   )
 }
