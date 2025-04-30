@@ -6,39 +6,35 @@ import Listado from './components/Listado/'
 
 function App() {
   //const [count, setCount] = useState(0)
-  const [cita] = useState([
+  const [cita, setCitas] = useState([
     { nombreMascota: "Luna",
-    dueñoMascota : "Fran",
+    nombreDueño : "Fran",
     fecha : "11/07/2001",
     hora : "10:05",
     sintomas : "Fiebre"
     },
     { 
       nombreMascota: "Bun",
-      dueñoMascota: "Carlos",
+      nombreDueño: "Carlos",
       fecha: "12/07/2001",
       hora: "14:30",
       sintomas: "Tos"
-    },
-    { 
-      nombreMascota: "Rocky",
-      dueñoMascota: "Ana",
-      fecha: "13/07/2001",
-      hora: "09:00",
-      sintomas: "Cansancio"
-    }  
+    } 
   ]);
+
+ const agregarCita = (newCita) => {
+
+    setCitas([...cita, newCita])
+ }
 
   return (
     <>
-
-
       <h1>ADMINISTRADOR DE PACIENTES</h1>
       <div class="container">
         <div class="row">
           <div class="one-half column">
             <h2>Crear mi Cita</h2>
-            <Formulario/>
+            <Formulario agregarCita={agregarCita}/>
           </div>
           <div class="one-half column">
             <h2>Listado de Citas</h2>
@@ -46,9 +42,10 @@ function App() {
           </div>
         </div>
       </div>
-   
     </>
+
   )
 }
 
 export default App
+

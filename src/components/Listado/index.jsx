@@ -10,7 +10,7 @@ function Listado({ cita }) {
             <Citas
             key={index}
             nombreMascota={cita.nombreMascota}
-            dueñoMascota={cita.dueñoMascota}
+            dueñoMascota={cita.nombreDueño}
             fecha={cita.fecha}
             hora={cita.hora}
             sintomas={cita.sintomas}
