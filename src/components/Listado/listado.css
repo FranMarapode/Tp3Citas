@@ -1,0 +1,9 @@
+.lista-citas {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  

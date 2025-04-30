@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import './formulario.css';
 
 function Formulario({ agregarCita }) {
   const [newCita, setNewCita] = useState({
     nombreMascota: '',
-    nombreDueño: '',
+    dueñoMascota: '',
     fecha: '',
     hora: '',
     sintomas: '',
@@ -19,14 +20,32 @@ function Formulario({ agregarCita }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!validarFormulario()) return;
     agregarCita(newCita);
     setNewCita({
       nombreMascota: '',
-      nombreDueño: '',
+      dueñoMascota: '',
       fecha: '',
       hora: '',
       sintomas: '',
     });
+    
+  };
+
+  const validarFormulario = () => {
+      const { nombreMascota, dueñoMascota, fecha, hora, sintomas } = newCita;
+    
+      if (
+        nombreMascota.trim() === '' ||
+        dueñoMascota.trim() === '' ||
+        fecha.trim() === '' ||
+        hora.trim() === '' ||
+        sintomas.trim() === ''
+      ) {
+        alert("Todos los campos son obligatorios.");
+        return false;
+      }
+      return true;
   };
 
   return (
@@ -44,10 +63,10 @@ function Formulario({ agregarCita }) {
       <label>Nombre Dueño</label>
         <input
           type="text"
-          name="propietario"
+          name="dueñoMascota"
           class="u-full-width"
           placeholder="Nombre dueño de la mascota"
-          value={newCita.nombreDueño}
+          value={newCita.dueñoMascota}
           onChange={handleChange}
         />
       <label>Fecha</label>

@@ -1,0 +1,37 @@
+.cita {
+    padding: 2rem;
+    background: white;
+    border-bottom: 1px solid #e1e1e1;
+    color: black;
+    margin-bottom: 20px;
+    border-radius: 1rem;
+  }
+  
+  .cita p {
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+  }
+  
+  .cita p span {
+    font-weight: normal;
+  }
+  
+  .cita__titulo {
+    font-weight: bold;
+  }
+  
+  .cita__detalle {
+    font-size: 1.2rem;
+  }
+  
+  .button.eliminar,
+  .button.eliminar:hover {
+    background-color: #c10059;
+    color: white;
+    margin-top: 2rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  

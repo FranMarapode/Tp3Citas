@@ -1,30 +1,41 @@
 import { useState } from 'react'
 import './App.css'
-import Citas from './components/Citas/';
 import Formulario from './components/Formulario/'
 import Listado from './components/Listado/'
 
 function App() {
-  //const [count, setCount] = useState(0)
+ 
   const [cita, setCitas] = useState([
     { nombreMascota: "Luna",
-    nombreDueño : "Fran",
+    dueñoMascota : "Fran",
     fecha : "11/07/2001",
     hora : "10:05",
     sintomas : "Fiebre"
     },
     { 
-      nombreMascota: "Bun",
-      nombreDueño: "Carlos",
-      fecha: "12/07/2001",
+      nombreMascota: "Tom",
+      dueñoMascota: "Willy",
+      fecha: "22/09/1990",
       hora: "14:30",
       sintomas: "Tos"
     } 
   ]);
 
+const deleteCita = (index) => {
+  const nuevasCitas = [...cita];
+  if (confirm("¿Estas seguro de eliminar esta cita?")) {
+    nuevasCitas.splice(index, 1)
+  }
+  
+  
+  setCitas(nuevasCitas);
+}
+
  const agregarCita = (newCita) => {
 
+  if (confirm("¿Estas seguro de querer agregar esta cita?")) {
     setCitas([...cita, newCita])
+  }    
  }
 
   return (
@@ -38,7 +49,7 @@ function App() {
           </div>
           <div class="one-half column">
             <h2>Listado de Citas</h2>
-            <Listado cita={cita}/>
+            <Listado cita={cita} deleteCita={deleteCita}/>
           </div>
         </div>
       </div>

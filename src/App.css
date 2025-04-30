@@ -1,13 +1,8 @@
-/* General Styles */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css');
 @import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
 
-
-html {
-  min-height: 100%;
-}
-
+html,
 body {
   margin: 0;
   padding: 0;
@@ -25,107 +20,4 @@ h2 {
   text-transform: uppercase;
   font-family: "Staatliches", cursive;
   letter-spacing: 1px;
-}
-
-/* Lista de Citas */
-.lista-citas {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  background-color: #fff;
-  margin: 0 auto;
-  max-width: 800px;
-}
-
-/* Estilo de cada cita */
-.cita {
-  padding: 2rem;
-  background: white;
-  border-bottom: 1px solid #e1e1e1;
-  color: black;
-  margin-bottom: 20px;
-  border-radius: 1rem;
-}
-
-.cita p {
-  font-weight: bold;
-  margin-bottom: 0.8rem;
-}
-
-.cita p span {
-  font-weight: normal;
-}
-
-.cita__titulo {
-  font-weight: bold;
-}
-
-.cita__detalle {
-  font-size: 1.2rem;
-}
-
-/* Estilos para Inputs y Formulario */
-label {
-  color: white;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-input[type="date"],
-input[type="time"],
-textarea {
-  height: 38px;
-  padding: 6px 10px;
-  background-color: #fff;
-  border: 1px solid #d1d1d1;
-  border-radius: 4px;
-  box-shadow: none;
-  box-sizing: border-box;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-textarea {
-  height: 100px;
-  resize: none;
-}
-
-/* Botón de eliminar cita */
-.button.eliminar,
-.button.eliminar:hover {
-  background-color: #c10059;
-  color: white;
-  margin-top: 2rem;
-  padding: 0.8rem 1.2rem;
-  border-radius: 0.5rem;
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-
-.alerta-error {
-  background-color: white;
-  color: red;
-  padding: 1rem;
-  font-size: 2rem;
-  text-transform: uppercase;
-  text-align: center;
-  font-family: "Staatliches", cursive;
-}
-
-/* Media Query */
-@media screen and (max-width: 768px) {
-  body {
-    padding-bottom: 3rem;
-  }
-  h1, h2 {
-    font-size: 1.5rem;
-  }
-  .cita {
-    padding: 1rem;
-    margin-bottom: 10px;
-  }
-  .button.eliminar {
-    font-size: 0.8rem;
-  }
 }
